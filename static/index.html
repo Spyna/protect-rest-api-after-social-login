@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	 crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	 crossorigin="anonymous">
+	<style>
+		.fa-facebook, .btn-facebook {
+	background: #3B5998;
+	color: white;
+	border: 1px solid white;
+}
+
+ .fa-google, .btn-google {
+	background: #dd4b39;
+	color: white;
+	border: 1px solid white;
+}
+
+
+#logs {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 500px;
+	height: 100%;
+}
+
+#image {
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	padding: 3px;
+
+}
+
+#flow {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	text-align: center;
+	z-index: 1000;
+	color: #fff;
+}
+
+#loading {
+	display: none;
+}
+.btn {
+	margin-bottom: 3px;
+}
+</style>
+	<title>Protect REST API after social login with Node.js and Express.js demo</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="display-4">Protect REST API after social login with Node.js and Express.js demo</h1>
+		<p>Please look the network and the console tab on dev tool.</p>
+		<button type="button" class="btn btn-success" id="showflow" onclick="$('#flow').toggle();">
+			<i class="fa fa-info"></i> show authentication flow image
+		</button>
+
+		<span id="loading">
+			<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> working...
+		</span>
+
+		<div id="flow" onclick="$('#flow').toggle();">
+			<h2>Authentication flow</h2>
+			<p>click anywhere to close</p>
+			<img src="./social-auth-flow.png">
+		</div>
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+
+					<section class="card-body">
+						<h2 class="display-5">1 - Log yourself in using a social network</h2>
+
+						<span id="facebook-loader"><i class="fa fa-spinner fa-spin"></i>
+							connecting to facebook...</span>
+						<button type="button" class="btn btn-facebook" id="loginFacebook" style="display: none">
+							<i class="fa fa-facebook"></i> login with Facebook
+						</button>
+
+						<span id="google-loader"><i class="fa fa-spinner fa-spin"></i>
+							connecting to google...</span>
+						<button type="button" class="btn btn-google" id="google-signin-button" style="display: none">
+							<i class="fa fa-google"></i> login with Google
+						</button>
+						<br>
+						<div id="social-token-container" style="display: none">
+							<h2>Social Token</h2>
+							<pre id="social-token"></pre>
+						</div>
+
+
+					</section>
+					<section class="card-body">
+						<h2 class="display-5">2 - Call the server with the <em>social token</em>.</h2>
+						<button id="btn-authenticate" disabled="disabled" class="btn btn-success">Call the server</button> this button is
+						enabled after the <em>social login</em>
+						<div id="user-box" style="display: none">
+							Hello
+							<img id="image" style="max-width: 60px"> <span id="name"></span>
+						</div>
+					</section>
+					<section class="card-body">
+						<h2 class="display-5">3 - Call the server api</h2>
+						<button id="btn-call-api" disabled="disabled" class="btn btn-success">call api</button> enabled after <em>login
+							on server</em>
+						<br>
+						<button id="btn-call-api-fail" class="btn btn-danger">call
+							api without token</button>
+						<br>
+						<button id="btn-call-api-public" class="btn btn-info">call
+							unprotected api</button>
+						<br> server response:
+						<pre id="server-response"></pre>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	 crossorigin="anonymous"></script>
+	<script src="./test.js"></script>
+	<script src="./login.js"></script>
+
+
+</body>
+
+</html>
