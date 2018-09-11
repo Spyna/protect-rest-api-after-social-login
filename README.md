@@ -1,9 +1,11 @@
 # protect-rest-api-after-social-login
-Demo code for [this medium post](https://medium.com/@spyna/how-really-protect-your-rest-api-after-social-login-with-node-js-3617c336ebed).
+Demo code for [Protect REST API after social login with Node.js and Express.js ![alt text](https://cdn-images-1.medium.com/max/90/1*EC1rcVKWyKqQoRWlXDvGVA.jpeg) ](https://medium.com/@spyna/how-really-protect-your-rest-api-after-social-login-with-node-js-3617c336ebed).
 
 ## Runnin Demo 
 
 https://authenticated-social-login.herokuapp.com/ be patient, the app is hosted on *Heroku*, and they turn off/on the instance after 30 minutes of inactivity. So, when you access after that time, the node process needs to start.
+
+
 
 ## Disclaimer
 
