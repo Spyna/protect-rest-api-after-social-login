@@ -1,6 +1,6 @@
 var jwt = require('jsonwebtoken');
 
-const secret = require('./credentials').jwt.secret;
+const secret = process.env.JWT_SECRET_PASSWORD;
 
 module.exports.verify = token => {
     return jwt.verify(token, secret);

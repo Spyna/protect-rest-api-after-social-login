@@ -1,5 +1,4 @@
-const credentials = require('./credentials');
-const GOOGLE_CLIENT_ID = credentials.google.client_id;
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const { OAuth2Client } = require('google-auth-library');
 var client = new OAuth2Client(GOOGLE_CLIENT_ID, '', '');
 

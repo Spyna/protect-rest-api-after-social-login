@@ -1,6 +1,5 @@
-const credentials = require('./credentials').facebook;
 
-const { client_id } = credentials;
+const client_id  = process.env.FACEBOOK_CLIENT_ID;
 const client_secret = process.env.FACEBOOK_CLIENT_SECRET;
 
 var fetch = require('node-fetch');
