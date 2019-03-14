@@ -1,0 +1,47 @@
+.fa-facebook,
+.btn-facebook {
+  background: #3b5998;
+  color: white;
+  border: 1px solid white;
+}
+
+.fa-google,
+.btn-google {
+  background: #dd4b39;
+  color: white;
+  border: 1px solid white;
+}
+
+#logs {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 500px;
+  height: 100%;
+}
+
+#image {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  padding: 3px;
+}
+
+#flow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  text-align: center;
+  z-index: 1000;
+  color: #fff;
+}
+
+#loading {
+  display: none;
+}
+.btn {
+  margin-bottom: 3px;
+}

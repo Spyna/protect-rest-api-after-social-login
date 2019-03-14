@@ -35,7 +35,9 @@ JWT_SECRET_PASSWORD = secretPassToEncodeJWTs
 
 Launch the application with the `local` script.
 
+
 ```shell
+npm install -g nodemon
 yarn local
 #npm run local
 ```
