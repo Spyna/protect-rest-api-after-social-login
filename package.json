@@ -18,7 +18,7 @@
     "express": "^4.15.5",
     "google-auth-library": "^4.1.0",
     "jsonwebtoken": "^8.1.1",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "prettier": "^1.14.2"
